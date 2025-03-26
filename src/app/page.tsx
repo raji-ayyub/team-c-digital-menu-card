@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "@/components/ui/Button";
+
 
 export default function Home() {
   return (
@@ -18,8 +18,6 @@ export default function Home() {
           🚧 Page Under Construction 🚧
         </div>
 
-        {/* COMPONENTS TEST */}
-        <Button variant="primary" size="sm" >hfyhjg</Button>
       </div>
     </main>
   );
