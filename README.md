@@ -4,45 +4,50 @@ A **Next.js**-powered web application that allows restaurants to manage and disp
 
 ---
 
-## 🚀 Tech Stack
+## Tech Stack
 
 - **Frontend**: Next.js (App Router), TypeScript, Tailwind CSS
 - **State Management**: Context API (or alternative)
 - **Styling**: Tailwind CSS, CSS Modules (if needed)
 - **Authentication**: TBD (Firebase/Auth0/NextAuth.js)
-- **Deployment**: Vercel, Netlify, or Railway
+- **Deployment**: Vercel
 
 ---
 
 
 
-## 📂 Project Structure
+## Project Structure
 
-📂 src/
-├── 📂 app/ (Main app logic)
-│ ├── 📂 (auth)/ (Login/Signup pages if needed)
-│ ├── 📂 dashboard/ (User dashboard if applicable)
-│ ├── 📂 menu/ (Menu-related pages)
-│ ├── 📂 api/ (If using backend APIs inside Next.js)
-│ ├── 📜 layout.tsx (Root layout)
-│ ├── 📜 page.tsx (Home page)
-│ ├── 📜 globals.css (Global styles)
-│
-├── 📂 components/ (Reusable components)
-│ ├── 📜 Navbar.tsx
-│ ├── 📜 Button.tsx
-│ ├── 📜 Input.tsx
-│
-├── 📂 styles/ (CSS or Tailwind configs)
-│ ├── 📜 globals.css
-│
-├── 📂 lib/ (Utility functions, API calls)
-│
-📜 tailwind.config.ts
-📜 postcss.config.js
-📜 tsconfig.json
-
-
+menu-card/
+│── src/
+│   ├── app/
+│   │   ├── page.tsx  → Homepage
+│   │   ├── menu/  
+│   │   │   ├── [id]/  → Dynamic menu page for scanned restaurant
+│   │   │   │   ├── page.tsx  → Loads menu dynamically via scanned QR code
+│   │   ├── dashboard/ → Admin dashboard for restaurant owners
+│   │   ├── auth/
+│   │   │   ├── login.tsx
+│   │   │   ├── signup.tsx
+│   │   ├── generate-qr.tsx  → Page where restaurants create QR codes
+│   │   ├── scan-qr.tsx  → Page for scanning QR codes
+│   ├── components/
+│   │   ├── ui/  
+│   │   │   ├── Button.tsx
+│   │   │   ├── Input.tsx
+│   │   │   ├── Navbar.tsx
+│   │   │   ├── QRScanner.tsx  → Component for scanning QR codes
+│   ├── services/
+│   │   ├── qrService.ts  → Handles QR code generation & scanning
+│   │   ├── menuService.ts  → Fetches menu data after scanning
+│   ├── utils/
+│   │   ├── qrUtils.ts  → Helper functions for QR code handling
+│   ├── lib/
+│   │   ├── api.ts  
+│── README.md
+│── next.config.js
+│── tailwind.config.js
+│── tsconfig.json
 
 ---
 
